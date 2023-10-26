@@ -9,13 +9,39 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+        NavigationStack {
+            ZStack {
+                VStack {
+                    Text("Welcome to\n      Kotton")
+                        .font(.largeTitle)
+                        .fontWeight(.black)
+                        .padding(.bottom, 42)
+                    Text("Kotton is a ...")
+                    VStack() {
+                        NavigationLink(destination: LoginView()) {
+                        Text("Login")
+                            .fontWeight(.heavy)
+                            .font(.title3)
+                            .frame(maxWidth: .infinity)
+                            .padding()
+                            .foregroundColor(.white)
+                            .background(.green)
+                            .cornerRadius(40)
+                        }
+                        NavigationLink(destination: SignupView()) {
+                        Text("Register")
+                            .fontWeight(.heavy)
+                            .font(.title3)
+                            .frame(maxWidth: .infinity)
+                            .padding()
+                            .foregroundColor(.white)
+                            .background(.green)
+                            .cornerRadius(40)
+                        }
+                    } .padding()
+                }
+            }
         }
-        .padding()
     }
 }
 
