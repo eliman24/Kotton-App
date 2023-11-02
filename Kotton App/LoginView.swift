@@ -10,8 +10,8 @@ import SwiftUI
 struct LoginView: View {
     @State private var username: String = ""
     @State private var password: String = ""
-//    @State private var wrongUsername: Float = 0
-//    @State private var wrongPassword: Float = 0
+    @State private var wrongUsername: Float = 0
+    @State private var wrongPassword: Float = 0
     @State private var showingLoginScreen = false
     
     var body: some View {
@@ -23,10 +23,20 @@ struct LoginView: View {
                         .fontWeight(.black)
                         .padding(.bottom, 42)
                     VStack(spacing: 16.0) {
-                        InputFieldView(data: $username, title: "Username")
-//                            .border(.red, width: CGFloat(wrongUsername))
-                        PasswordInputView(data: $password, title: "Password")
-//                            .border(.red, width: CGFloat(wrongPassword))
+//                        InputFieldView(data: $username, title: "Username")
+//                        PasswordInputView(data: $password, title: "Password")
+                        TextField("Username", text: $username)
+                           .padding()
+                           .frame(width: 300, height: 50)
+                           .background(Color.black.opacity(0.05))
+                           .cornerRadius(10)
+                           .border(.red, width: CGFloat(wrongUsername))
+                        SecureField("Password", text: $password)
+                            .padding()
+                            .frame(width: 300, height: 50)
+                            .background(Color.black.opacity(0.05))
+                            .cornerRadius(10)
+                            .border(.red, width: CGFloat(wrongPassword))
                     } .padding()
                     Button("Sign In") {
                         authenticateUser(username: username, password: password)
@@ -37,6 +47,7 @@ struct LoginView: View {
                         .padding()
                         .foregroundColor(.white)
                         .background(.green)
+                        .frame(width: 300, height: 50)
                         .cornerRadius(40)
                         .padding()
                     
@@ -62,10 +73,16 @@ struct LoginView: View {
     // need to figure out how to add database to this
     func authenticateUser(username: String, password: String) {
         // not case sensitive
-        if username == "Lissiemanalo" {
-            if password == "Year_of2024" {
+        if username.lowercased() == "lissiemanalo" {
+            wrongUsername = 0
+            if password.lowercased() == "year_of2024" {
+                wrongPassword = 0
                 showingLoginScreen = true
+            } else {
+                wrongPassword = 2
             }
+        } else {
+            wrongUsername = 2
         }
     }
 }

@@ -24,7 +24,7 @@ struct QuizView: View {
                 VStack(alignment: .center) {
                     Group {
                         if page == 0 {
-                            PageView(question: "What is your age?", color: .systemBrown)
+                            PageView(question: "How many liters of water does it take to make 1 pair of jeans?", color: .systemBrown)
                             TextField(
                                 "", text: $age
                             )
@@ -34,72 +34,69 @@ struct QuizView: View {
                             .padding(6)
                             .frame(width: 130.0)
                         } else if page == 1 {
-                            PageView(question: "What are your skin goals?", color: .systemBlue)
+                            PageView(question: "What percentage of total global greenhouse gas emissions are produced by the fashion industry?", color: .systemBlue)
                             Text("(choose all that apply)")
                                 .font(.title2)
-                            Button("More even tone") {
+                            Button("Less than 1%") {
                                 self.page = self.page + 1
                             }
                             .modifier(Answer())
-                            Button("A healthy glow") {
+                            // right answer
+                            Button("4%") {
                                 self.page = self.page + 1
                             }
                             .modifier(Answer())
-                            Button("Clear skin") {
+                            Button("10%") {
                                 self.page = self.page + 1
                             }
                             .modifier(Answer())
-                            Button("Prevent wrinkles") {
+                            Button("15%") {
                                 self.page = self.page + 1
                             }
                             .modifier(Answer())
                         } else if page == 2 {
-                            PageView(question: "Which best describes your skin type?", color: .systemBlue)
-                            Button("Dry") {
+                            PageView(question: "The fashion industry contributes to environmental degradation in which of the following ways?", color: .systemBlue)
+                            Button("Deforestation") {
                                 self.page = self.page + 1
                             }
                             .modifier(Answer())
-                            Button("Normal") {
+                            Button("Desertification and degradation of soil") {
                                 self.page = self.page + 1
                             }
                             .modifier(Answer())
-                            Button("Combination") {
+                            Button("Loss of biodiversity") {
                                 self.page = self.page + 1
                             }
                             .modifier(Answer())
-                            Button("Oily") {
+                            // right answer
+                            Button("All of the above") {
                                 self.page = self.page + 1
                             }
                             .modifier(Answer())
                         } else if page == 3 {
-                            PageView(question: "Which best describe your skin concerns?", color: .systemBlue)
-                            Text("(choose all that apply)")
-                                .font(.title2)
-                            Button("Dry patches") {
+                            PageView(question: "What does greenwashing in fashion refer to?", color: .systemBlue)
+                            Button("Washing clothing in environmentally friendly ways") {
                                 self.page = self.page + 1
                             }
                             .modifier(Answer())
-                            Button("Oiliness") {
+                            // right answer
+                            Button("Claims of environmental sustainability by a brand that are false or misleading") {
                                 self.page = self.page + 1
                             }
                             .modifier(Answer())
-                            Button("Fine lines and wrinkles") {
+                            Button("Lying to people around you that something you bought was secondhand when it wasn’ts") {
                                 self.page = self.page + 1
                             }
                             .modifier(Answer())
-                            Button("Redness and irritation") {
-                                self.page = self.page + 1
-                            }
-                            .modifier(Answer())
-                            Button("Dark spots or hyperpigmentation") {
+                            Button("Using natural fabric dyes") {
                                 self.page = self.page + 1
                             }
                             .modifier(Answer())
                         } else if page == 4 {
-                            Text("HERE ARE YOUR RESULTS!")
+                            Text("YOU GOT 100% CORRECT!")
                                 .modifier(Question())
                             
-                            NavigationLink(destination: /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Destination@*/Text("Destination")/*@END_MENU_TOKEN@*/) {
+                            NavigationLink(destination: ShopView()) {
                                 Text("VIEW SHOP")
                                     .foregroundStyle(.white.gradient)
                                     .fontWeight(.bold)

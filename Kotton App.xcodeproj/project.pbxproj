@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E6059FE42AF1CEBE009A2B28 /* BlackTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6059FE32AF1CEBE009A2B28 /* BlackTopView.swift */; };
 		E6183A702AE17C530037060D /* Kotton_AppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6183A6F2AE17C530037060D /* Kotton_AppApp.swift */; };
 		E6183A722AE17C530037060D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6183A712AE17C530037060D /* ContentView.swift */; };
 		E6183A742AE17C550037060D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E6183A732AE17C550037060D /* Assets.xcassets */; };
@@ -15,20 +16,23 @@
 		E67CB3EF2AEAB66D003FB558 /* ShopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E67CB3EE2AEAB66D003FB558 /* ShopView.swift */; };
 		E67CB3F12AEABC72003FB558 /* QuizView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E67CB3F02AEABC72003FB558 /* QuizView.swift */; };
 		E6AFE7182AE8173500A3B88E /* SignupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AFE7172AE8173500A3B88E /* SignupView.swift */; };
+		E6B1526F2AF1585000A7F564 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B1526E2AF1585000A7F564 /* Models.swift */; };
 		E6C4F6A62AE6C6E200A777D9 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6C4F6A52AE6C6E200A777D9 /* LoginView.swift */; };
 		E6C4F6A82AE6C79D00A777D9 /* InputFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6C4F6A72AE6C79D00A777D9 /* InputFieldView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E6059FE32AF1CEBE009A2B28 /* BlackTopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlackTopView.swift; sourceTree = "<group>"; };
 		E6183A6C2AE17C530037060D /* Kotton App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Kotton App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6183A6F2AE17C530037060D /* Kotton_AppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kotton_AppApp.swift; sourceTree = "<group>"; };
 		E6183A712AE17C530037060D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		E6183A732AE17C550037060D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E6183A762AE17C550037060D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		E67CB3EC2AEAB227003FB558 /* PasswordInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordInputView.swift; sourceTree = "<group>"; };
-		E67CB3EE2AEAB66D003FB558 /* ShopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ShopView.swift; path = "Kotton App/Preview Content/ShopView.swift"; sourceTree = "<group>"; };
+		E67CB3EE2AEAB66D003FB558 /* ShopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopView.swift; sourceTree = "<group>"; };
 		E67CB3F02AEABC72003FB558 /* QuizView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizView.swift; sourceTree = "<group>"; };
 		E6AFE7172AE8173500A3B88E /* SignupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupView.swift; sourceTree = "<group>"; };
+		E6B1526E2AF1585000A7F564 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		E6C4F6A52AE6C6E200A777D9 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		E6C4F6A72AE6C79D00A777D9 /* InputFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputFieldView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -47,7 +51,7 @@
 		E6183A632AE17C530037060D = {
 			isa = PBXGroup;
 			children = (
-				E67CB3EE2AEAB66D003FB558 /* ShopView.swift */,
+				E6059FE32AF1CEBE009A2B28 /* BlackTopView.swift */,
 				E6183A6E2AE17C530037060D /* Kotton App */,
 				E6183A6D2AE17C530037060D /* Products */,
 			);
@@ -64,6 +68,7 @@
 		E6183A6E2AE17C530037060D /* Kotton App */ = {
 			isa = PBXGroup;
 			children = (
+				E67CB3EE2AEAB66D003FB558 /* ShopView.swift */,
 				E6AFE7172AE8173500A3B88E /* SignupView.swift */,
 				E6183A6F2AE17C530037060D /* Kotton_AppApp.swift */,
 				E6183A712AE17C530037060D /* ContentView.swift */,
@@ -71,6 +76,7 @@
 				E6C4F6A52AE6C6E200A777D9 /* LoginView.swift */,
 				E6C4F6A72AE6C79D00A777D9 /* InputFieldView.swift */,
 				E67CB3EC2AEAB227003FB558 /* PasswordInputView.swift */,
+				E6B1526E2AF1585000A7F564 /* Models.swift */,
 				E6183A732AE17C550037060D /* Assets.xcassets */,
 				E6183A752AE17C550037060D /* Preview Content */,
 			);
@@ -157,10 +163,12 @@
 			files = (
 				E6C4F6A62AE6C6E200A777D9 /* LoginView.swift in Sources */,
 				E6183A722AE17C530037060D /* ContentView.swift in Sources */,
+				E6059FE42AF1CEBE009A2B28 /* BlackTopView.swift in Sources */,
 				E6C4F6A82AE6C79D00A777D9 /* InputFieldView.swift in Sources */,
 				E6183A702AE17C530037060D /* Kotton_AppApp.swift in Sources */,
 				E67CB3ED2AEAB227003FB558 /* PasswordInputView.swift in Sources */,
 				E67CB3F12AEABC72003FB558 /* QuizView.swift in Sources */,
+				E6B1526F2AF1585000A7F564 /* Models.swift in Sources */,
 				E67CB3EF2AEAB66D003FB558 /* ShopView.swift in Sources */,
 				E6AFE7182AE8173500A3B88E /* SignupView.swift in Sources */,
 			);
