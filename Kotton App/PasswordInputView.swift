@@ -24,10 +24,10 @@ struct PasswordInputView: View {
           Text(title ?? "Input")
             .font(.headline)
             .fontWeight(.thin)      // making the text small
-            .foregroundColor(Color.gray)    // and gray
+            .foregroundColor(Color("spring"))
             .multilineTextAlignment(.leading)
             .padding(4)
-            .background(.white)
+            .background(Color("forest"))
             Spacer()
         }
         .padding(.leading, 8)

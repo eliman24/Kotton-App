@@ -8,52 +8,62 @@
 import SwiftUI
 
 struct SignupView: View {
-    @State private var name: String = ""
+    @State private var firstName: String = ""
+    @State private var lastName: String = ""
     @State private var email: String = ""
     @State private var password: String = ""
+    @State private var confirmPassword: String = ""
+    @State private var showingSignupScreen = false
     
     var body: some View {
-        NavigationStack {
+        NavigationView { // Changed to NavigationView
             ZStack {
+                Color("forest")
+                    .ignoresSafeArea()
                 VStack {
                     Text("Create Your Account")
                         .font(.largeTitle)
                         .fontWeight(.black)
+                        .foregroundColor(Color.white)
                         .padding()
-                    Text("Please enter info to create account")
+                    Text("Please enter info to create an account")
+                        .foregroundColor(Color("spring"))
                     VStack(spacing: 15.0) {
-                        InputFieldView(data: $name, title: "Name")
+                        InputFieldView(data: $firstName, title: "First Name")
+                        InputFieldView(data: $lastName, title: "Last Name")
                         InputFieldView(data: $email, title: "Email")
                         PasswordInputView(data: $password, title: "Password")
-                        PasswordInputView(data: $password, title: "Confirm Password")
+                        PasswordInputView(data: $confirmPassword, title: "Confirm Password")
                     } .padding()
                     
-                    NavigationLink(destination: ShopView()) {
-//                        addUser(name: name, email: email, password: password)
-                        Text("Create Account")
+                    Button("Create Account") {
+                        addUser(firstName: firstName, lastName: lastName, email: email, password: password, confirmPassword: confirmPassword)
                     }
                         .fontWeight(.heavy)
                         .font(.title3)
                         .frame(maxWidth: .infinity)
                         .padding()
                         .foregroundColor(.white)
-                        .background(.green)
+                        .background(Color("spring"))
                         .cornerRadius(40)
                         .padding()
+                    
+                    if showingSignupScreen {
+                        NavigationLink(destination: ShopView()) {
+                            Text("Welcome \(firstName) \(lastName)!")
+                                .foregroundColor(Color.white)
+                        }
+                    }
                 }
             }
         }
     }
-}
-
-// need to figure out how to add database to this
-func addUser(name: String, email: String, password: String) {
-    // not case sensitive
-    if name != "" {
-        if email != "" {
-            if password != "" {
-                
-            }
+    
+    // Need to figure out how to add a database to this
+    func addUser(firstName: String, lastName: String, email: String, password: String, confirmPassword: String) {
+        // Not case sensitive
+        if !firstName.isEmpty && !lastName.isEmpty && !email.isEmpty && !password.isEmpty && password == confirmPassword {
+            showingSignupScreen = true
         }
     }
 }

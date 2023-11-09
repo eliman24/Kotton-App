@@ -21,6 +21,7 @@ struct ShopView: View {
                             Text("TAKE SUSTAINABILITY QUIZ")
                         }
                             .fontWeight(.black)
+                        Text("(might be a different type of quiz)")
                             .padding(.bottom, 42)
                         HStack {
                             VStack(alignment: .leading, spacing: 7) {
@@ -110,7 +111,7 @@ struct ProductDesc: ViewModifier {
 
 struct ProductIcon : ViewModifier {
     func body(content: Content) -> some View {
-        NavigationLink(destination: BlackTopView()) {
+        NavigationLink(destination: BlackTopView(isImportant: false)) {
             content
         }
             .padding(9)

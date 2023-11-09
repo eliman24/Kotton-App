@@ -17,11 +17,13 @@ struct LoginView: View {
     var body: some View {
         NavigationStack {
             ZStack {
+                Color("forest")
+                    .ignoresSafeArea()
                 VStack {
                     Text("Kotton")
                         .font(.largeTitle)
-                        .fontWeight(.black)
                         .padding(.bottom, 42)
+                        .foregroundColor(.white)
                     VStack(spacing: 16.0) {
 //                        InputFieldView(data: $username, title: "Username")
 //                        PasswordInputView(data: $password, title: "Password")
@@ -30,12 +32,13 @@ struct LoginView: View {
                            .frame(width: 300, height: 50)
                            .background(Color.black.opacity(0.05))
                            .cornerRadius(10)
+                           .border(Color("spring"))
                            .border(.red, width: CGFloat(wrongUsername))
                         SecureField("Password", text: $password)
                             .padding()
                             .frame(width: 300, height: 50)
-                            .background(Color.black.opacity(0.05))
                             .cornerRadius(10)
+                            .border(Color("spring"))
                             .border(.red, width: CGFloat(wrongPassword))
                     } .padding()
                     Button("Sign In") {
@@ -46,23 +49,28 @@ struct LoginView: View {
                         .frame(maxWidth: .infinity)
                         .padding()
                         .foregroundColor(.white)
-                        .background(.green)
-                        .frame(width: 300, height: 50)
-                        .cornerRadius(40)
+                        .background(Color("spring"))
+                        .frame(width: 300, height: 70)
+                        .cornerRadius(100)
                         .padding()
                     
                     if showingLoginScreen {
                         NavigationLink(destination: ShopView()) {
-                            Text("You are logged in @\(username)")
+                            Text("Welcome back @\(username)!")
+                                .foregroundColor(Color.white)
                         }
                     }
 
                     
                     HStack {
-                        Spacer()
-                        Text("Forgot Password?")
-                            .fontWeight(.thin)
-                            .foregroundColor(Color.blue)
+                        Text("Don't have an account?")
+                            .fontWeight(.medium)
+                            .foregroundColor(Color("spring"))
+                        NavigationLink(destination: SignupView()) {
+                            Text("Sign up?")
+                        }
+                            .fontWeight(.medium)
+                            .foregroundColor(Color.white)
                             .underline()
                     }.padding(16)
                 }

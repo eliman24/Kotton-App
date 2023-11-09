@@ -9,6 +9,9 @@ import SwiftUI
 
 @main
 struct Kotton_AppApp: App {
+    
+    let persistenceController = PersistenceController.shared
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
